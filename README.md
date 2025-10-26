@@ -1,225 +1,225 @@
 # LeetNex Backend
 
-Backend system for LeetNex platform - A technical interview preparation platform for developers and students.
+Sistema backend da plataforma LeetNex - Uma plataforma de preparação para entrevistas técnicas para desenvolvedores e estudantes.
 
-## Overview
+## Visão Geral
 
-LeetNex is a comprehensive platform designed to help developers and students prepare for technical interviews through practice problems, coding challenges, and session tracking. This backend provides RESTful APIs to support the frontend application with user management, problem management, code execution, and analytics.
+LeetNex é uma plataforma abrangente projetada para ajudar desenvolvedores e estudantes a se prepararem para entrevistas técnicas por meio de problemas de prática, desafios de programação e rastreamento de sessões. Este backend fornece APIs RESTful para suportar a aplicação frontend com gerenciamento de usuários, gerenciamento de problemas, execução de código e análise.
 
-## Technology Stack
+## Stack Tecnológica
 
 - **Java** 17
 - **Spring Boot** 3.2.0
-- **Spring Security** - Authentication and authorization
-- **JPA/Hibernate** - Object-relational mapping
-- **PostgreSQL** - Database
-- **Redis** - Caching
-- **JWT** - Token-based authentication
-- **MapStruct** - DTO mapping
-- **Maven** - Dependency management
-- **WebRTC** - Real-time communication support
+- **Spring Security** - Autenticação e autorização
+- **JPA/Hibernate** - Mapeamento objeto-relacional
+- **PostgreSQL** - Banco de dados
+- **Redis** - Cache
+- **JWT** - Autenticação baseada em token
+- **MapStruct** - Mapeamento de DTOs
+- **Maven** - Gerenciamento de dependências
+- **WebRTC** - Suporte para comunicação em tempo real
 
-## Features
+## Funcionalidades
 
-### User Management
-- User registration and authentication
-- JWT-based secure authentication
-- Role-based access control (Admin, User)
-- User profiles and progress tracking
+### Gerenciamento de Usuários
+- Registro e autenticação de usuários
+- Autenticação segura baseada em JWT
+- Controle de acesso baseado em funções (Admin, Usuário)
+- Perfis de usuário e rastreamento de progresso
 
-### Problem Management
-- CRUD operations for coding problems
-- Support for multiple programming languages
-- Problem difficulty levels (Easy, Medium, Hard)
-- Problem categories (Arrays, Strings, Dynamic Programming, etc.)
-- Example test cases and constraints
+### Gerenciamento de Problemas
+- Operações CRUD para problemas de codificação
+- Suporte para múltiplas linguagens de programação
+- Níveis de dificuldade dos problemas (Fácil, Médio, Difícil)
+- Categorias de problemas (Arrays, Strings, Programação Dinâmica, etc.)
+- Casos de teste e restrições de exemplo
 
-### Code Execution
-- Multi-language code execution support
-- Sandboxed code execution environment
-- Test case validation
-- Runtime and memory usage tracking
+### Execução de Código
+- Suporte para execução de código em múltiplas linguagens
+- Ambiente de execução de código em sandbox
+- Validação de casos de teste
+- Rastreamento de uso de runtime e memória
 
-### Practice Sessions
-- Timer functionality for practice sessions
-- Camera integration support for monitoring
-- Session recording and history
-- Submission tracking
+### Sessões de Prática
+- Funcionalidade de cronômetro para sessões de prática
+- Suporte para integração de câmera para monitoramento
+- Gravação e histórico de sessões
+- Rastreamento de submissões
 
-### Analytics
-- User statistics and progress tracking
-- Submission history and analysis
-- Performance metrics
-- Leaderboard support
+### Análise
+- Estatísticas e rastreamento de progresso do usuário
+- Histórico e análise de submissões
+- Métricas de desempenho
+- Suporte para leaderboard
 
-## Project Structure
+## Estrutura do Projeto
 
 ```
 backend/
 ├── src/
 │   ├── main/
 │   │   ├── java/com/leetnex/
-│   │   │   ├── config/              # Configuration classes
-│   │   │   ├── controller/          # REST controllers
-│   │   │   ├── dto/                 # Data transfer objects
-│   │   │   ├── mapper/              # MapStruct mappers
-│   │   │   ├── model/               # Entity models
-│   │   │   ├── repository/          # Data access layer
-│   │   │   ├── security/            # Security configuration
-│   │   │   ├── service/             # Business logic
-│   │   │   └── util/                # Utility classes
+│   │   │   ├── config/              # Classes de configuração
+│   │   │   ├── controller/          # Controladores REST
+│   │   │   ├── dto/                 # Objetos de transferência de dados
+│   │   │   ├── mapper/              # Mapeadores MapStruct
+│   │   │   ├── model/               # Modelos de entidade
+│   │   │   ├── repository/          # Camada de acesso a dados
+│   │   │   ├── security/            # Configuração de segurança
+│   │   │   ├── service/             # Lógica de negócios
+│   │   │   └── util/                # Classes utilitárias
 │   │   └── resources/
 │   │       ├── application.properties
-│   │       └── db/migration/        # Database migrations
+│   │       └── db/migration/        # Migrações de banco de dados
 │   └── test/
 │       └── java/com/leetnex/
 └── pom.xml
 ```
 
-## Prerequisites
+## Pré-requisitos
 
-- Java 17 or higher
+- Java 17 ou superior
 - Maven 3.6+
 - PostgreSQL 12+
-- Redis (optional, for caching)
+- Redis (opcional, para cache)
 
-## Configuration
+## Configuração
 
-### Database Setup
+### Configuração do Banco de Dados
 
-1. Create a PostgreSQL database:
+1. Crie um banco de dados PostgreSQL:
 ```sql
 CREATE DATABASE leetnex;
 ```
 
-2. Update `application.properties` with your database credentials:
+2. Atualize o `application.properties` com suas credenciais de banco de dados:
 ```properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/leetnex
 spring.datasource.username=postgres
-spring.datasource.password=your_password
+spring.datasource.password=sua_senha
 ```
 
-### JWT Configuration
+### Configuração JWT
 
-Configure JWT secret in `application.properties`:
+Configure o segredo JWT em `application.properties`:
 ```properties
-jwt.secret=your-secret-key-here
+jwt.secret=sua-chave-secreta-aqui
 jwt.expiration=86400000
 ```
 
-## Running the Application
+## Executando a Aplicação
 
-1. Clone the repository:
+1. Clone o repositório:
 ```bash
-git clone <repository-url>
+git clone <url-do-repositorio>
 cd backend
 ```
 
-2. Build the project:
+2. Compile o projeto:
 ```bash
 mvn clean install
 ```
 
-3. Run the application:
+3. Execute a aplicação:
 ```bash
 mvn spring-boot:run
 ```
 
-The application will start on `http://localhost:8080`
+A aplicação será iniciada em `http://localhost:8080`
 
-## API Documentation
+## Documentação da API
 
-### Authentication
-- `POST /api/auth/register` - Register a new user
-- `POST /api/auth/login` - User login
-- `POST /api/auth/refresh` - Refresh access token
+### Autenticação
+- `POST /api/auth/register` - Registrar um novo usuário
+- `POST /api/auth/login` - Login do usuário
+- `POST /api/auth/refresh` - Atualizar token de acesso
 
-### Users
-- `GET /api/users/me` - Get current user profile
-- `PUT /api/users/me` - Update user profile
-- `GET /api/users/{id}` - Get user by ID (Admin)
+### Usuários
+- `GET /api/users/me` - Obter perfil do usuário atual
+- `PUT /api/users/me` - Atualizar perfil do usuário
+- `GET /api/users/{id}` - Obter usuário por ID (Admin)
 
-### Problems
-- `GET /api/problems` - Get all problems
-- `GET /api/problems/{id}` - Get problem by ID
-- `POST /api/problems` - Create problem (Admin)
-- `PUT /api/problems/{id}` - Update problem (Admin)
-- `DELETE /api/problems/{id}` - Delete problem (Admin)
+### Problemas
+- `GET /api/problems` - Obter todos os problemas
+- `GET /api/problems/{id}` - Obter problema por ID
+- `POST /api/problems` - Criar problema (Admin)
+- `PUT /api/problems/{id}` - Atualizar problema (Admin)
+- `DELETE /api/problems/{id}` - Excluir problema (Admin)
 
-### Submissions
-- `POST /api/submissions` - Submit code solution
-- `GET /api/submissions` - Get user submissions
-- `GET /api/submissions/{id}` - Get submission by ID
+### Submissões
+- `POST /api/submissions` - Submeter solução de código
+- `GET /api/submissions` - Obter submissões do usuário
+- `GET /api/submissions/{id}` - Obter submissão por ID
 
-### Sessions
-- `GET /api/sessions` - Get user practice sessions
-- `POST /api/sessions` - Start a new practice session
-- `PUT /api/sessions/{id}` - Update session
-- `DELETE /api/sessions/{id}` - End session
+### Sessões
+- `GET /api/sessions` - Obter sessões de prática do usuário
+- `POST /api/sessions` - Iniciar uma nova sessão de prática
+- `PUT /api/sessions/{id}` - Atualizar sessão
+- `DELETE /api/sessions/{id}` - Encerrar sessão
 
-## Testing
+## Testes
 
-Run all tests:
+Execute todos os testes:
 ```bash
 mvn test
 ```
 
-Run specific test class:
+Execute uma classe de teste específica:
 ```bash
-mvn test -Dtest=YourTestClass
+mvn test -Dtest=SuaClasseDeTeste
 ```
 
-## Database Migrations
+## Migrações de Banco de Dados
 
-The project uses Flyway for database migrations. Migrations are located in `src/main/resources/db/migration/`
+O projeto usa Flyway para migrações de banco de dados. As migrações estão localizadas em `src/main/resources/db/migration/`
 
-## Security
+## Segurança
 
-- JWT-based authentication
-- Password encryption using BCrypt
-- Role-based access control
-- CORS configuration
-- SQL injection prevention through JPA
+- Autenticação baseada em JWT
+- Criptografia de senha usando BCrypt
+- Controle de acesso baseado em funções
+- Configuração CORS
+- Prevenção de injeção SQL através de JPA
 
-## Development Guidelines
+## Diretrizes de Desenvolvimento
 
-### Code Style
-- Follow Java naming conventions
-- Use meaningful variable and method names
-- Add JavaDoc comments for public methods
-- Keep methods focused and single-purpose
+### Estilo de Código
+- Siga as convenções de nomenclatura Java
+- Use nomes de variáveis e métodos significativos
+- Adicione comentários JavaDoc para métodos públicos
+- Mantenha métodos focados e com propósito único
 
-### Database
-- Use JPA entities for database mapping
-- Always use DTOs for API responses
-- Avoid exposing entity objects directly
-- Use transactions appropriately
+### Banco de Dados
+- Use entidades JPA para mapeamento de banco de dados
+- Sempre use DTOs para respostas de API
+- Evite expor objetos de entidade diretamente
+- Use transações adequadamente
 
-### Error Handling
-- Implement global exception handling
-- Return meaningful error messages
-- Log errors appropriately
-- Use appropriate HTTP status codes
+### Tratamento de Erros
+- Implemente tratamento global de exceções
+- Retorne mensagens de erro significativas
+- Registre erros adequadamente
+- Use códigos de status HTTP apropriados
 
-## Contributing
+## Contribuindo
 
-When contributing to this project:
+Ao contribuir para este projeto:
 
-1. Create a feature branch from `main`
-2. Make your changes
-3. Write or update tests as needed
-4. Ensure all tests pass
-5. Submit a pull request
+1. Crie um branch de funcionalidade a partir de `main`
+2. Faça suas alterações
+3. Escreva ou atualize testes conforme necessário
+4. Certifique-se de que todos os testes passem
+5. Envie uma pull request
 
-## License
+## Licença
 
-See LICENSE file for details.
+Consulte o arquivo LICENSE para detalhes.
 
-## Contact
+## Contato
 
-For questions or support, please contact the development team.
+Para dúvidas ou suporte, entre em contato com a equipe de desenvolvimento.
 
-## Version History
+## Histórico de Versões
 
-- **1.0.0** - Initial release with core features
+- **1.0.0** - Versão inicial com funcionalidades principais
 
